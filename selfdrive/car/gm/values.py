@@ -88,6 +88,7 @@ class CAR:
   SUBURBAN = "CHEVROLET SUBURBAN PREMIER 2019"
   BOLT_EUV = "CHEVROLET BOLT EUV 2022"
   BOLT_EUV_NR = "CHEVROLET BOLT EUV 2022 NO RADAR"
+  XT4 = "Cadillac XT4 2023"
 
 class CruiseButtons:
   INIT = 0
@@ -258,10 +259,16 @@ FINGERPRINTS = {
   {
     170: 8, 188: 8, 189: 7, 190: 7, 193: 8, 197: 8, 201: 8, 209: 7, 211: 3, 241: 6, 288: 5, 289: 8, 292: 2, 298: 8, 304: 3, 308: 4, 309: 8, 311: 8, 313: 8, 320: 4, 322: 7, 328: 1, 331: 3, 352: 5, 353: 3, 368: 3, 381: 8, 384: 4, 386: 8, 388: 8, 390: 7, 398: 8, 407: 7, 417: 8, 419: 1, 451: 8, 452: 8, 453: 6, 454: 8, 456: 8, 458: 5, 463: 3, 479: 3, 481: 7, 485: 8, 489: 8, 493: 8, 495: 4, 497: 8, 499: 3, 500: 6, 501: 8, 503: 2, 508: 8, 528: 5, 532: 6, 546: 7, 550: 8, 554: 3, 558: 8, 560: 8, 562: 8, 563: 5, 564: 5, 565: 5, 566: 8, 567: 5, 568: 2, 569: 3, 573: 1, 608: 8, 609: 6, 610: 6, 611: 6, 612: 8, 613: 8, 647: 6, 707: 8, 711: 6, 715: 8, 717: 5, 753: 5, 761: 7, 789: 5, 800: 6, 810: 8, 840: 5, 842: 5, 844: 8, 848: 4, 866: 4, 869: 4, 872: 1, 880: 6, 961: 8, 967: 4, 969: 8, 975: 2, 977: 8, 979: 8, 985: 5, 988: 6, 989: 8, 995: 7, 1001: 8, 1005: 6, 1009: 8, 1010: 8, 1013: 6, 1015: 1, 1017: 8, 1019: 2, 1020: 8, 1037: 5, 1105: 5, 1187: 5, 1217: 8, 1221: 5, 1223: 3, 1225: 7, 1227: 4, 1233: 8, 1236: 8, 1249: 8, 1257: 6, 1265: 8, 1275: 3, 1279: 4, 1280: 4, 1296: 4, 1300: 8, 1322: 6, 1323: 4, 1328: 4, 1905: 7, 1906: 7, 1907: 7, 1910: 7, 1912: 7, 1913: 7, 1922: 7, 1927: 7, 1930: 7
   }],
+  CAR.XT4: [
+  # Cadillac XT4 w/ ACC 2023
+  {
+    393: 7, 209: 7, 407: 7, 489: 8, 413: 8, 844: 8, 384: 4, 422: 4, 431: 8, 501: 8, 1033: 7, 241: 6, 1034: 7, 485: 8, 1296: 4, 481: 7, 193: 8, 197: 8, 840: 5, 842: 5, 1105: 5, 190: 6, 201: 8, 211: 2, 398 : 8, 401: 8, 455: 7, 562: 8, 199: 4, 249: 8, 715: 8, 717: 5, 869: 4, 880: 6, 353: 3, 417: 7, 419: 1, 426: 7, 442: 8, 451: 8, 452: 8, 453: 6, 479: 3, 497: 8, 500 : 6, 503: 2, 508: 8, 647: 6, 761: 7, 872: 1, 499: 3, 289: 8, 969: 8, 560: 8, 719 : 5, 352: 5, 532: 6, 866: 4, 298: 8, 567: 5, 707: 8, 309: 8, 388: 8, 292: 2, 975 : 2, 313: 8, 368: 3, 1005: 6, 608: 8, 609: 6, 610: 6, 611: 6, 612: 8, 613: 8, 386: 8, 322: 7, 381: 8, 554: 3, 564: 5, 961: 8, 977: 8, 979: 8, 985: 5, 1001: 8, 1011: 6, 1017: 8, 1020: 8, 1930: 7, 1009: 8, 1221: 5, 1013: 5, 1225: 7, 1273: 3, 806: 1, 1217: 8, 1223: 2, 1233: 8, 1259: 8, 1417: 8, 1236: 8, 1277: 7, 1279: 4, 288: 5, 304: 3, 320: 4, 1195: 3, 1919: 7, 328: 1, 1912: 7, 1249: 8, 1257: 6, 1300: 8, 1322: 6, 1323: 4, 1328: 4, 1280: 4, 1907: 7, 331: 3, 1187: 5, 1261: 7, 1263: 4, 1265: 8, 1267: 1, 1268: 2, 1276: 2, 1278: 4, 1906: 7, 573: 1, 563: 5, 565: 5
+  }],
+
 }
 
 EV_CAR = set([CAR.BOLT_NR, CAR.VOLT, CAR.VOLT_NR, CAR.BOLT_EUV, CAR.BOLT_EUV_NR])
-NO_ASCM = set([CAR.VOLT_NR, CAR.MALIBU_NR, CAR.ACADIA_NR, CAR.BOLT_NR, CAR.EQUINOX_NR, CAR.TAHOE_NR, CAR.SILVERADO_NR, CAR.SUBURBAN, CAR.BOLT_EUV])
+NO_ASCM = set([CAR.VOLT_NR, CAR.MALIBU_NR, CAR.ACADIA_NR, CAR.BOLT_NR, CAR.EQUINOX_NR, CAR.TAHOE_NR, CAR.SILVERADO_NR, CAR.SUBURBAN, CAR.BOLT_EUV, CAR.XT4])
 # Not including CAR.BOLT_EUV_NR because we want OP to behave as though it had an ASCM
 HIGH_TORQUE = set([CAR.SILVERADO_NR, CAR.SUBURBAN, CAR.TAHOE_NR])
 
@@ -284,4 +291,6 @@ DBC = {
   CAR.SUBURBAN: dbc_dict('gm_global_a_powertrain_generated', 'gm_global_a_object', chassis_dbc='gm_global_a_chassis'),
   CAR.BOLT_EUV: dbc_dict('gm_global_a_powertrain_generated', 'gm_global_a_object', chassis_dbc='gm_global_a_chassis'),
   CAR.BOLT_EUV_NR: dbc_dict('gm_global_a_powertrain_generated', 'gm_global_a_object', chassis_dbc='gm_global_a_chassis'),
+  CAR.XT4: dbc_dict('gm_global_a_powertrain_generated', 'gm_global_a_object', chassis_dbc='gm_global_a_chassis'),
+
 }

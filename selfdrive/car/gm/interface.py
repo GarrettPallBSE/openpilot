@@ -99,9 +99,9 @@ class CarInterface(CarInterfaceBase):
     ret.carName = "gm"
     ret.safetyConfigs = [get_safety_config(car.CarParams.SafetyModel.gm)]
     ret.unsafeMode = 1 # UNSAFE_DISABLE_DISENGAGE_ON_GAS
-    ret.pcmCruise = False  # stock cruise control is kept off
-    ret.openpilotLongitudinalControl = True # ASCM vehicles use OP for long
-    ret.radarOffCan = False # ASCM vehicles (typically) have radar
+    ret.pcmCruise = True  # stock cruise control is kept off
+    ret.openpilotLongitudinalControl = False # ASCM vehicles use OP for long
+    ret.radarOffCan = True # ASCM vehicles (typically) have radar
 
     # These cars have been put into dashcam only due to both a lack of users and test coverage.
     # These cars likely still work fine. Once a user confirms each car works and a test route is
@@ -406,6 +406,17 @@ class CarInterface(CarInterfaceBase):
       ret.radarOffCan = True # No Radar
       # Note: Camera in EUV sans ACC still sends acc messages
       # We will try VOACC
+
+    elif candidate == CAR.XT4:
+      ret.minEnableSpeed = -1.  # engage speed is decided by ascm
+      ret.mass = 3660. * CV.LB_TO_KG
+      ret.wheelbase = 2.78
+      ret.steerRatio = 14.4
+      ret.centerToFront = ret.wheelbase * 0.4
+      ret.pcmCruise = True # TODO: see if this resolves cruiseMismatch
+      ret.openpilotLongitudinalControl = False # Using Stock ACC
+      ret.radarOffCan = True # No Radar
+
 
     if candidate in HIGH_TORQUE:
       ret.safetyConfigs[0].safetyParam = 1 # set appropriate safety param for increased torque limits to match values.py
