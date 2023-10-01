@@ -41,7 +41,7 @@ class CarController():
     # next Panda loopback confirmation in the current CS frame.
     if CS.lka_steering_cmd_counter != self.lka_steering_cmd_counter_last:
       self.lka_steering_cmd_counter_last = CS.lka_steering_cmd_counter
-    elif (frame % P.STEER_STEP) == 0 and c.active and CS.CP.carFingerprint == CAR.XT4:
+    elif (frame % P.STEER_STEP) == 0:
       lkas_enabled = c.active and not (CS.out.steerFaultTemporary or CS.out.steerFaultPermanent) and CS.out.vEgo > P.MIN_STEER_SPEED
       if lkas_enabled:
         new_steer = int(round(actuators.steer * P.STEER_MAX))
@@ -162,13 +162,13 @@ class CarController():
     # alarming orange icon when approaching torque limit.
     # If not sent again, LKA icon disappears in about 5 seconds.
     # Conveniently, sending camera message periodically also works as a keepalive.
-    lka_active = CS.lkas_status == 1
-    lka_critical = lka_active and abs(actuators.steer) > 0.9
-    lka_icon_status = (lka_active, lka_critical)
-    if CS.CP.carFingerprint != CAR.BOLT_EUV_NR and frame % P.CAMERA_KEEPALIVE_STEP == 0 or lka_icon_status != self.lka_icon_status_last:
-      steer_alert = hud_alert in (VisualAlert.steerRequired, VisualAlert.ldw)
-      can_sends.append(gmcan.create_lka_icon_command(CanBus.SW_GMLAN, lka_active, lka_critical, steer_alert))
-      self.lka_icon_status_last = lka_icon_status
+    # lka_active = CS.lkas_status == 1
+    # lka_critical = lka_active and abs(actuators.steer) > 0.9
+    # lka_icon_status = (lka_active, lka_critical)
+    # if CS.CP.carFingerprint != CAR.BOLT_EUV_NR and frame % P.CAMERA_KEEPALIVE_STEP == 0 or lka_icon_status != self.lka_icon_status_last:
+    #   steer_alert = hud_alert in (VisualAlert.steerRequired, VisualAlert.ldw)
+    #   can_sends.append(gmcan.create_lka_icon_command(CanBus.SW_GMLAN, lka_active, lka_critical, steer_alert))
+    #   self.lka_icon_status_last = lka_icon_status
 
     new_actuators = actuators.copy()
     new_actuators.steer = self.apply_steer_last / P.STEER_MAX
