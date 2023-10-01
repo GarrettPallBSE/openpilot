@@ -131,15 +131,15 @@ class CarState(CarStateBase):
 
     checks = [
       ("BCMTurnSignals", 1),
-      ("ECMPRDNL2", 10),
+      ("ECMPRDNL2", 40), #40
       ("PSCMStatus", 10),
       ("ESPStatus", 10),
       ("BCMDoorBeltStatus", 10),
       ("EBCMWheelSpdFront", 20),
       ("EBCMWheelSpdRear", 20),
-      ("AcceleratorPedal2", 33),
+      ("AcceleratorPedal2", 40), #40
       ("ASCMSteeringButton", 33),
-      ("ECMEngineStatus", 100),
+      ("ECMEngineStatus", 80), #80
       ("PSCMSteeringAngle", 100),
       ("EBCMBrakePedalPosition", 100),
     ]
