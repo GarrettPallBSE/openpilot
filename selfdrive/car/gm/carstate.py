@@ -146,9 +146,9 @@ class CarState(CarStateBase):
 
     # TODO: Might be wise to find the non-electronic parking brake signal
     # TODO: JJS Add hasEPB to cereal
-    # if CP.carFingerprint != CAR.SUBURBAN and CP.carFingerprint != CAR.TAHOE_NR:
-    #   signals.append(("EPBClosed", "EPBStatus", 0))
-    #   checks.append(("EPBStatus", 20))
+    if CP.carFingerprint != CAR.SUBURBAN and CP.carFingerprint != CAR.TAHOE_NR:
+      signals.append(("EPBClosed", "EPBStatus", 0))
+      checks.append(("EPBStatus", 20))
     
 
     if CP.enableGasInterceptor:
