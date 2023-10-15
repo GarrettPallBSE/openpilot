@@ -7,7 +7,7 @@ class CarControllerParams():
     self.STEER_MAX = 300  # Safety limit, not LKA max. JJS: This is not true
     # STEER_MAX is used for the output calculation and MUST be left at 300
     # There are no GM EPS racks capable of more than 3 N/m of assist torque. DO NOT CHANGE IT
-    self.STEER_STEP = 10  # control frames per command
+    self.STEER_STEP = 2  # control frames per command
     #TDOD: CONFIRM I'm pretty sure these are applied to the ABS() of the torque. If not, it would end up being a left/right difference...
     self.STEER_DELTA_UP = 7
     self.STEER_DELTA_DOWN = 17
